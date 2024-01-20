@@ -76,4 +76,20 @@ console.table(sortedByLastName);
 // 8. Reduce Exercise
 // Sum up the instances of each of these
 const data = ['car', 'car', 'truck', 'truck', 'bike', 'walk', 'car', 'van', 'bike', 'walk', 'car', 'van', 'car', 'truck'];
+const sum = (prev, next) => {
+    let num = 0;
+    if(prev === next) {
+        num++;
+    }
+    return num;
+};
 
+const sumUp = data.reduce((obj, next) => {
+    if (!obj[next]) obj[next] = 0;
+    obj[next]++;
+    return obj;
+
+}, {});
+
+console.log(`Sum up the instances of each of these`);
+console.table(sumUp);
